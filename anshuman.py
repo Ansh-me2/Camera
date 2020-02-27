@@ -7,7 +7,7 @@ def getTextOverlay(input_image):
     ret,thresh1 = cv2.threshold(gray,4,255,cv2.THRESH_BINARY)
     blur = cv2.GaussianBlur(thresh1,(3,3),0)
     #kernel = np.ones((3,3), np.uint8)
-    img_erosion = cv2.erode(blur, None, iterations=2) 
+    img_erosion = cv2.erode(blur, None, iterations=3) 
     img_dilation = cv2.dilate(img_erosion, None, iterations=3)
     return img_dilation
 
